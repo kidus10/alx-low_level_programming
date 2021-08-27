@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 /**
- * *main - Satrting point
- * *
- * *Return: zero
- * *
- * *Descripitions: Prints Hexadecimal numbers in Lowercase
- * */
+ *main - Satrting point
+ *
+ *Return: zero
+ *
+ *Descripitions: Prints Hexadecimal numbers in Lowercase
+ */
 
 int main(void)
 {
