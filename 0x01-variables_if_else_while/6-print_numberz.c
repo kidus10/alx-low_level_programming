@@ -1,12 +1,11 @@
 #include <stdio.h>
-
 /**
- * *main - Satrting point
- * *
- * *Return: zero
- * *
- * *Descripitions: Prints single digit number using putchar
- * */
+ *main - Satrting point
+ *
+ *Return: zero
+ *
+ *Descripitions: Prints single digit number using putchar
+ */
 
 int main(void)
 {

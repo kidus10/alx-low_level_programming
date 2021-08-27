@@ -1,12 +1,11 @@
 #include <stdio.h>
-
 /**
- * *main - Satrting point
- * *
+ *main - Satrting point
+ *
  * *Return: zero
- * *
- * *Descripitions: Prints all possible different combinations of three digits
- * */
+ *
+ *Descripitions: Prints all possible different combinations of three digits
+ */
 
 int main(void)
 {

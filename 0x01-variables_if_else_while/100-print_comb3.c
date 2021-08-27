@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 /**
- * *main - Satrting point
- * *
- * *Return: zero
- * *
- * *Descripitions: Prints all possible different combinations of two digits
- * */
+ *main - Satrting point
+ *
+ *Return: zero
+ *
+ *Descripitions: Prints all possible different combinations of two digits
+ */
 
 int main(void)
 {
