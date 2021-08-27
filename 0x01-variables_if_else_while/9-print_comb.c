@@ -1,13 +1,11 @@
 #include <stdio.h>
-
 /**
- * *main - Satrting point
- * *
- * *Return: zero
- * *
- * *Descripitions: Prints all possible combinations of single-digit numbers
- * */
-
+ *main - Satrting point
+ *
+ *Return: zero
+ *
+ *Descripitions: Prints all possible combinations of single-digit numbers
+ */
 int main(void)
 {
 	int num;
