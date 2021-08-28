@@ -1,10 +1,8 @@
 #include <stdio.h>
 /**
- *main - Satrting point
+ *main - starting point of thet program
  *
- * *Return: zero
- *
- *Descripitions: Prints all possible different combinations of three digits
+ *Return: 0
  */
 
 int main(void)

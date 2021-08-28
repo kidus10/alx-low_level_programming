@@ -1,13 +1,9 @@
 #include <stdio.h>
-
 /**
- *main - Satrting point
+ *main - starting point of the program
  *
- *Return: zero
- *
- *Descripitions: Prints Hexadecimal numbers in Lowercase
+ *Return: 0
  */
-
 int main(void)
 {
 	char alp;

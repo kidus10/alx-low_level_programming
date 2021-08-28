@@ -1,12 +1,9 @@
 #include <stdio.h>
 /**
- *main - Satrting point
+ *main - starting point of the program
  *
- *Return: zero
- *
- *Descripitions: Prints single digit number using putchar
+ *Return: 0
  */
-
 int main(void)
 {
 	int num;
