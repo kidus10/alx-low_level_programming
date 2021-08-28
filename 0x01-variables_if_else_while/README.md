@@ -23,17 +23,17 @@
 * 9-print_comb.c :- prints all possible **combinations of single-digit numbers** separated by `comma` followed by a `space` in **ascending order** and using only `putchar()` function.
 
 * 100-print_comb3.c :- prints all possible different **combinations of two digits** separated by `comma` followed by a `space` using only `putchar()` function.
-  * The two digits must be different, `01` and `10` are considered the same combination of the two digits 0 and 1
-  * Print only the smallest combination of two digits
-  * Numbers should be printed in ascending order, with two digits
+  * The two digits must be different, `01` and `10` are considered the same combination of the two digits `0` and `1`
+  * Print only the **smallest combination** of two digits
+  * Numbers should be printed in **ascending order**
 
 * 101-print_comb4.c :- prints all possible different **combinations of three digits** separated by `comma` followed by a `space` using only `putchar()` function.
-  * The three digits must be different, 012 and 120 are considered the same combination of the three digits 0, 1 and 2
-  * Prints only the smallest combination of two digits
-  * Numbers are printed in ascending order, with two digits
+  * The three digits must be different, `012` and `120` are considered the same combination of the three digits `0`, `1` and `2`
+  * Prints only the **smallest combination** of two digits
+  * Numbers are printed in **ascending order**
 
-* 102-print_comb5.c :-  prints all possible **combinations of two two-digit numbers** where the numbers range from 0 to 99 and separated by `comma`, followed by a `space` printed using only the `putchar()` function.
-  * The two numbers should be separated by a space
-  * All numbers are printed with two digits, 1 is printed as 01
+* 102-print_comb5.c :-  prints all possible **combinations of two two-digit numbers** where the numbers range from `0` to `99` and separated by `comma`, followed by a `space` printed using only the `putchar()` function.
+  * The two numbers should be separated by a `space`
+  * All numbers are printed with **two digits**, `1` is printed as `01`
   * The combination of the numbers are in **ascending order**
   * `00 01` and `01 00` are considered as the same combination of the numbers `0` and `1` 
