@@ -8,4 +8,4 @@
 
 * 0x02-functions_nested_loops :- Contains **C programs** that deals with `functions` and **nested** `loops`.
 
-* 0x03-debugging :- Contains **C programs** that are `debugged` and **fixed**..
+* 0x03-debugging :- Contains **C programs** that are `debugged` and **fixed**.
