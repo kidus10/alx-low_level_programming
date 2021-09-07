@@ -1,30 +1,30 @@
- - Pointers, arrays and strings
+# C - Pointers, arrays and strings
 
 *Description or function of all the programs in this directory are listed below.*
 
-* 0-reset_to_98.c :- a function that takes a pointer to an int as parameter and updates the value it points to to 98.
+* 0-reset_to_98.c :- a function that takes a `pointer` to an `int` as parameter and `updates` the value it points to `98`.
 
-* 1-swap.c :- a function that swaps the values of two integers.
+* 1-swap.c :- a function that `swaps` the values of two `integers`.
 
-* 2-strlen.c :- a function that returns the length of a string.
+* 2-strlen.c :- a function that `returns` the `length` of a `string`.
 
-* 3-puts.c :- a function that prints a string, followed by a new line, to stdout.
+* 3-puts.c :- a function that prints a `string`, followed by a new line.
 
-* 4-print_rev.c :- a function that prints a string, in reverse, followed by a new line.
+* 4-print_rev.c :- a function that prints a `string`, in `reverse`, followed by a new line.
 
-* 5-rev_string.c :- a function that reverses a string.
+* 5-rev_string.c :- a function that `reverses` a `string`.
 
-* 6-puts2.c :- a function that prints every other character of a string, starting with the first character, followed by a new line.
+* 6-puts2.c :- a function that prints every `other character` of a `string`, starting with the `first` character, followed by a new line.
 
-* 7-puts_half.c :- a function that prints half of a string, followed by a new line.
+* 7-puts_half.c :- a function that prints `half` of a string, followed by a new line.
 
-* 8-print_array.c :- a function that prints n elements of an array of integers, followed by a new line.
+* 8-print_array.c :- a function that prints `n` elements of an `array of integers`, followed by a new line.
 
-* 9-strcpy.c :- a function that copies the string pointed to by src, including the terminating null byte (\0), to the buffer pointed to by dest.
+* 9-strcpy.c :- a function that `copies` the `string` pointed to by `src`, including the terminating `null byte` (`\0`), to the `buffer` pointed to by `dest`.
 
-* 100-atoi.c :- a function that convert a string to an integer, and:
-  * The number in the string can be preceded by an infinite number of characters
-  * You need to take into account all the - and + signs before the number
-  * If there are no numbers in the string, the function must return 0
+* 100-atoi.c :- a function that `convert` a `string` to an `integer`, and:
+  * The number in the `string` can be preceded by an infinite number of `characters`
+  * `-` and `+` signs are take into account
+  * If there are no `numbers` in the `string`, the function returns `0`
 
-* 101-keygen.c :- a program that generates random valid passwords for the program 101-crackme (https://github.com/holbertonschool/0x04.c).
+* 101-keygen.c :- a program that `generates` random valid `passwords` for the program [101-crackme](https://github.com/holbertonschool/0x04.c).
