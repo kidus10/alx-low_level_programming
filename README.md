@@ -9,3 +9,9 @@
 * 0x02-functions_nested_loops :- Contains **C programs** that deals with `functions` and **nested** `loops`.
 
 * 0x03-debugging :- Contains **C programs** that are `debugged` and **fixed**.
+
+* 0x04-more_functions_nested_loops :- Contains **C programs** that deals more about **functions** and **nested** `loops`.
+
+* 0x05-pointers_arrays_strings :- Contains **programs** and **functions** that deal with `pointers`, `arrays` and `strings`.
+
+* 0x06-pointers_arrays_strings :- Contains **programs** and **functions** that deals more about `pointers`, `arrays` and `strings`.
