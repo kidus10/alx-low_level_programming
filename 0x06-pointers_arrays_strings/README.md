@@ -31,9 +31,9 @@
   * Letters `t` and `T` should be replaced by `7`
   * Letters `l` and `L` should be replaced by `1`
 
-* 100-rot13.c :- a function that encodes a string using rot13.
+* 100-rot13.c :- a function that `encodes` a string using `rot13`.
 
-* 101-print_number.c :- a function that prints an integer.
+* 101-print_number.c :- a function that `prints` an `integer`.
 
 * 102-magic.c :- Add `one line` to [this code](https://github.com/holbertonschool/make_magic_happen/blob/master/magic.c), so that the program prints `a[2] = 98`, followed by a new line.
   * It's not allowed to `use` the variable `a` in your new line of code
