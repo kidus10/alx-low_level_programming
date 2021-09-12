@@ -30,3 +30,22 @@
   * Letters `o` and `O` should be replaced by `0`
   * Letters `t` and `T` should be replaced by `7`
   * Letters `l` and `L` should be replaced by `1`
+
+* 100-rot13.c :- a function that encodes a string using rot13.
+
+* 101-print_number.c :- a function that prints an integer.
+
+* 102-magic.c :- Add `one line` to [this code](https://github.com/holbertonschool/make_magic_happen/blob/master/magic.c), so that the program prints `a[2] = 98`, followed by a new line.
+  * It's not allowed to `use` the variable `a` in your new line of code
+  * It's not allowed to `modify` the variable `p`
+  * It's not allowed to use `,`
+  * The code should be written at line `19`, before the `;`
+  * Do not `remove` anything from the initial code, not even the `comments`
+  * Do not `change` anything but the line of code you are adding (don’t change the `spaces` to `tabs`!)
+  * Allowed only to write `one` statement
+
+* 103-infinite_add.c :- a function that adds two numbers.
+  * Assuming that you will always get `positive numbers` or `0`
+  * Assuming that there will be only `digits` in the strings `n1` and `n2`
+  * `n1` and `n2` will never be `empty`
+  * If the result can not be `stored` in `r` the function must return `0`
