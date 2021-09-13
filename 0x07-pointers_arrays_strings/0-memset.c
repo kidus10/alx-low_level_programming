@@ -4,7 +4,7 @@
 * @b: constant byte to fill with
 * @n: size of the fill
 *
-* Return: Always Void
+* Return: char pointer
 */
 char *_memset(char *s, char b, unsigned int n)
 {
