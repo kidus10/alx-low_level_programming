@@ -15,3 +15,11 @@
 * 0x05-pointers_arrays_strings :- Contains **programs** and **functions** that deal with `pointers`, `arrays` and `strings`.
 
 * 0x06-pointers_arrays_strings :- Contains **programs** and **functions** that deals more about `pointers`, `arrays` and `strings`.
+
+* 0x07-pointers_arrays_strings :- Contains **programs** and **functions** that deals even more about `pointers`, `arrays`     and `strings`.
+
+* 0x08-recursion :- Contains **programs** and **functions** that deal with `recursions`.
+
+* 0x09-static_libraries :- Contains `files` and `script` that deal with `static libraries` in `C`.
+
+* 0x0A-argc_argv :- Contains **programs** and **functions** that deal with **implementation** of `argc` and `argv` parameters  of the `main` function.
