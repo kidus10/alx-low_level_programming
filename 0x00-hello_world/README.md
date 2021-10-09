@@ -64,14 +64,19 @@ for argument in "$@" ; do
     ${BIN_PATH}/${BETTY_DOC} "$argument"
 done
 ```
-* Once saved, exit file and `change permissions` to apply to all users with: `chmod a+x betty`
-* `Move` the `betty` file into `/bin/` directory or somewhere else in your `$PATH` with: `sudo mv betty /bin/`
-
+* Once saved, exit file and `change permissions` to apply to all users with:
+```
+chmod a+x betty
+```
+* `Move` the `betty` file into `/bin/` directory or somewhere else in your `$PATH` with:
+```
+sudo mv betty /bin/
+```
 You can now type `betty <filename>` to run the Betty linter.
 
 ### Package
 Package to install inorder to test `-m32` and `-m64` `gcc` options:
 
 ```
-vagrant@vagrant-ubuntu-trusty-64:~$ sudo apt-get install libc6-dev-i386
+sudo apt-get install libc6-dev-i386
 ```
