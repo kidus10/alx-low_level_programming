@@ -40,7 +40,7 @@
 
 ## Useful Tools
 
-** _ Some important Tools and Resources _ **
+***Some important Tools and Resources***
 
 ### Betty linter
 
