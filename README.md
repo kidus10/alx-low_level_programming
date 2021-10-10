@@ -42,7 +42,7 @@
 
 ***Some important Tools and Resources***
 
-### Betty linter
+### 1. Betty linter
 
 To run the Betty linter just with command `betty <filename>`:
 
@@ -84,7 +84,7 @@ sudo mv betty /bin/
 ```
 You can now type `betty <filename>` to run the Betty linter.
 
-### Vagrant
+### 2. Vagrant
 
 #### How to install Vagrant on your personal computer
 
@@ -131,7 +131,7 @@ Now you are inside your `virtual machine`.
 vagrant@vagrant-ubuntu-trusty-64:~$
 ```
 
-### Package
+### 3. Important Packages
 Package to install inorder to test `-m32` and `-m64` `gcc` options:
 
 ```
