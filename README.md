@@ -131,9 +131,16 @@ Now you are inside your `virtual machine`.
 vagrant@vagrant-ubuntu-trusty-64:~$
 ```
 
-### 3. Important Packages
-Package to install inorder to test `-m32` and `-m64` `gcc` options:
+### 3. Useful Tools and Packages
+
+#### 3.1. Package to install inorder to test `-m32` and `-m64` `gcc` options:
 
 ```
 sudo apt-get install libc6-dev-i386
+```
+
+#### 3.2 Valgrind
+Used to check memory leaks:
+```
+sudo apt-get install valgrind
 ```
