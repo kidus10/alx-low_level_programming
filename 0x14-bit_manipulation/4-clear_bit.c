@@ -10,9 +10,6 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int clearer;
 
-	if (n < 0)
-		return (-1);
-
 	clearer = ~(power(2, index));
 	*n = *n & clearer;
 
