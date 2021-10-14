@@ -36,7 +36,7 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	while (i < length)
-	{	
+	{
 		result += ((power(2, i)) * (bin_to_int(*(b + i))));
 		i++;
 	}
