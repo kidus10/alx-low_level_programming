@@ -15,7 +15,7 @@ int main(void)
 		putchar(counter + 'a');
 		counter++;
 	}
- 
+
 	counter = 0;
 
 	while (counter <= 25)
