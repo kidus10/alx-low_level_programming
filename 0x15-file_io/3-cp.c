@@ -10,9 +10,12 @@
 
 int main(int argc, char **argv)
 {
-	int f_d_from, f_d_to, count, c_f_d_from, c_f_d_to;
+	int f_d_from, f_d_to, c_f_d_from, c_f_d_to;
 	ssize_t r_bytes, w_bytes;
 	char *buffer;
+	char *c;
+
+	r_bytes = 1;
 
 	if (argc != 3)
 	{
@@ -37,18 +40,18 @@ int main(int argc, char **argv)
 	}
 
 	buffer = malloc(sizeof(char) * 1024);
+	c = malloc(sizeof(char));
 
 	while (r_bytes)
 	{
-		r_bytes = read(f_d_from, buffer, 1024);
-		count++;
-	}
-	w_bytes = write(f_d_to, buffer, (1024 * count));
+		r_bytes = read(f_d_from, c, 1);
+		w_bytes = write(f_d_to, c, 1);
 
-	if (w_bytes == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		if (w_bytes == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 
 	free(buffer);
