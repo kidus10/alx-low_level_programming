@@ -1,22 +1,21 @@
 #include "main.h"
 
 /**
-* create_file - function that creates file
-* @filename: the file name
-* @text_content: string to write to the file
+* append_text_to_file - appends text at the end of file
+* @filename: the file
+* @text_content: string to be appended
 *
-* Return: -1 if: \
-* on any kind of failiure and if @filename is NULL
-* on success returns 1
+* Return: 1 on success, -1 on failiure \
+* -1 if @filename is NULL
 */
 
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int f_d;
-	size_t str_len;
 	ssize_t w_bytes;
+	size_t str_len;
 
-	f_d = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 00600);
+	f_d = open(filename, O_WRONLY | O_APPEND);
 
 	if (f_d == -1 || filename == NULL)
 		return (-1);
@@ -24,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 	if (text_content == NULL)
 	{
 		close(f_d);
-		return (0);
+		return (1);
 	}
 
 	str_len = find_length(text_content);
