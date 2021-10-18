@@ -14,6 +14,9 @@ int main(int argc, char **argv)
 	ssize_t r_bytes, w_bytes;
 	char *buffer;
 
+	count = 0;
+	r_bytes = 1;
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
