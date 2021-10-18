@@ -18,18 +18,29 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t wr_bytes, rd_bytes;
 	char *buffer;
 
-	buffer = malloc(sizeof(char) * letters);
 	f_d = open(filename, O_RDONLY);
 
 	if (f_d == -1 || filename == NULL)
 		return (0);
 
+	buffer = malloc(sizeof(char) * letters);
 	rd_bytes = read(f_d, buffer, letters);
+
+	if (rd_bytes == -1)
+	{
+		free(buffer);
+		close(f_d);
+		return (0);
+	}
 
 	wr_bytes = write(STDOUT_FILENO, buffer, letters);
 
 	if (wr_bytes == -1)
+	{
+		free(buffer);
+		close(f_d);
 		return (0);
+	}
 
 	free(buffer);
 	close(f_d);
