@@ -25,14 +25,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(sizeof(char) * letters);
 	f_d = open(filename, O_RDONLY);
 
-	if (f_d == -1 || filename == (void *)0)
+	if (f_d == -1 || filename == NULL)
 		return (0);
 
 	rd_bytes = read(f_d, buffer, letters);
 
-	wr_bytes = write(1, buffer, letters);
+	wr_bytes = write(STDOUT_FILENO, buffer, letters);
 
-	if (wr_bytes == -1 || wr_bytes < (ssize_t)letters)
+	if (wr_bytes == -1)
 		return (0);
 
 	close(f_d);
