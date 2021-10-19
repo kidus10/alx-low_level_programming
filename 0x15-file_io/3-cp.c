@@ -74,7 +74,7 @@ void exit_prog(char *message, int e_code, char *filename, int f_d, int flag)
 }
 
 /**
-* malloc_safe - safely allocate memory
+* safe_buffer - safely allocate memory
 * @filename: the filename
 *
 * Return: pointer to memory
