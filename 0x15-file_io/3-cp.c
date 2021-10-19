@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	if (f_d_to == -1)
 		exit_prog("Error: Can't write to", 99, argv[2], 0, 1);
 
-	buffer = malloc(sizeof(char) * 1024);
+	buffer = safe_buffer(argv[2]);
 	while (r_bytes)
 	{
 		r_bytes = read(f_d_from, buffer, 1024);
@@ -71,4 +71,22 @@ void exit_prog(char *message, int e_code, char *filename, int f_d, int flag)
 		dprintf(STDERR_FILENO, "%s %d\n", message, f_d);
 
 	exit(e_code);
+}
+
+/**
+* malloc_safe - safely allocate memory
+* @filename: the filename
+*
+* Return: pointer to memory
+*/
+void *safe_buffer(char *filename)
+{
+	char *buffer;
+
+	buffer = malloc(sizeof(char) * 1024);
+
+	if (buffer == NULL)
+		exit_prog("Error: Can't write to", 99, filename, 0, 1);
+
+	return (buffer);
 }
