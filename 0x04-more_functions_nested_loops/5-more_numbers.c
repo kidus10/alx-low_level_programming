@@ -7,15 +7,20 @@
 void more_numbers(void)
 {
 	int i, j;
+	char str[] = "01234567891011121314";
 
-	char otf[] = "01234567891011121314";
+	i = 0;
+	j = 0;
 
-	for (i = 0 ; i < 10 ; i++)
+	while (i < 10)
 	{
-		for (j = 0 ; j < 20 ; j++)
+		while (j < 20)
 		{
-			_putchar(otf[j]);
+			_putchar(str[j]);
+			j++;
 		}
 		_putchar('\n');
-	}
+
+		i++;
+	} 
 }
