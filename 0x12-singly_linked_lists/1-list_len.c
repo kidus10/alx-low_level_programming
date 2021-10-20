@@ -1,18 +1,22 @@
 #include "lists.h"
+
 /**
-* list_len - returns the numbers of elements in list_t
-* @h: constant pointer type list_t
+* list_len - returns the number of elements in a linked list_t list
+* @h: pointer to the head of the list
 *
-* Return: numbers of elements in list_t
+* Return: number of elements in list_t list
 */
 size_t list_len(const list_t *h)
 {
-size_t numele;
-numele = 0;
-while (h != NULL)
-{
-numele++;
-h = h->next;
-}
-return (numele);
+	size_t n_count = 0;
+
+	while (h->next != NULL)
+	{
+		h = h->next;
+		n_count++;
+	}
+
+	n_count++;
+
+	return (n_count);
 }
