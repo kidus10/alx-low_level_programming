@@ -1,4 +1,3 @@
-#include "main.h"
 /**
 * add - adds two integers and returns the result
 * @n1: the first integer for the calculation
