@@ -11,11 +11,10 @@
 int main(int argc, char **argv)
 {
 	int f_d_from, f_d_to, c_f_d_from, c_f_d_to;
-	ssize_t r_bytes, w_bytes, r_bytes_sum;
-	char *buffer, *buffer_ptr;
+	ssize_t r_bytes, w_bytes;
+	char *buffer;
 
 	r_bytes = 1;
-	r_bytes_sum = 0;
 
 	if (argc != 3)
 		exit_prog("Usage: cp file_from file_to", 97, NULL, 0, 0);
@@ -29,19 +28,19 @@ int main(int argc, char **argv)
 		exit_prog("Error: Can't write to", 99, argv[2], 0, 1);
 
 	buffer = safe_buffer(argv[2]);
-	buffer_ptr = buffer;
+
 	while (r_bytes > 0)
 	{
 		r_bytes = read(f_d_from, buffer, 1024);
-		r_bytes_sum += r_bytes;
-		buffer = buffer + r_bytes_sum;
+		w_bytes = write(f_d_to, buffer, r_bytes);
+
+		if (w_bytes == -1)
+			exit_prog("Error: Can't write to", 99, argv[2], 0, 1);
 	}
 	if (r_bytes == -1)
 		exit_prog("Error: Can't read from file", 98, argv[1], 0, 1);
-	w_bytes = write(f_d_to, buffer_ptr, r_bytes_sum);
-	if (w_bytes == -1)
-		exit_prog("Error: Can't write to", 99, argv[2], 0, 1);
 
+	free(buffer);
 	c_f_d_from = close(f_d_from);
 	c_f_d_to = close(f_d_to);
 
