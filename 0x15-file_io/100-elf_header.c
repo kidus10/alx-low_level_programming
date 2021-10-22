@@ -77,6 +77,7 @@ int main(int argc, char **argv)
 
 	print_entry(elf_header);
 
+	free(elf_header - 23);
 	return (0);
 }
 
