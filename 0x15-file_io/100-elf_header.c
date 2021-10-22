@@ -12,6 +12,8 @@ void print_data(char *elf_ptr);
 void print_version(char *elf_ptr);
 void print_OS(char *elf_ptr);
 void print_ABI(char *elf_ptr);
+void print_type(char *elf_ptr);
+void print_entry(char *elf_ptr);
 
 /**
 * main - displays the information contained in the ELF header at the start of an ELF file
@@ -65,7 +67,12 @@ int main(int argc, char **argv)
 	elf_header = elf_header + 1;
 
 	print_ABI(elf_header);
-	elf_header = elf_header + 1;
+	elf_header = elf_header + 8;
+
+	print_type(elf_header);
+	elf_header = elf_header + 7;
+
+	print_entry(elf_header);
 	return (0);
 }
 
@@ -124,7 +131,7 @@ void print_magic(char *elf_ptr)
 
 	i = 0;
 
-	printf("Magic:\t");
+	printf("%-20s", "Magic:");
 	while (i < 16)
 	{
 		printf("%02x", *(elf_ptr + i));
@@ -137,9 +144,15 @@ void print_magic(char *elf_ptr)
 	printf("\n");
 }
 
+/**
+* print_bit - prints the bit (32 or 64 bit)
+* @elf_ptr: pointer to the elf header
+*
+* Return: Always void
+*/
 void print_bit(char *elf_ptr)
 {
-	printf("Class:\t");
+	printf("%-20s", "Class:");
 	if (*elf_ptr == 0x01)
 		printf("ELF32");
 	else if (*elf_ptr == 0x02)
@@ -148,9 +161,15 @@ void print_bit(char *elf_ptr)
 	printf("\n");
 }
 
+/**
+* print_data - prints the endian (little or big)
+* @elf_ptr: pointer to the elf header
+*
+* Return: Always void
+*/
 void print_data(char *elf_ptr)
 {
-	printf("Data:\t");
+	printf("%-20s", "Data:");
 	if (*elf_ptr == 0x01)
 		printf("2's complement, little endian");
 	else if (*elf_ptr == 0x02)
@@ -159,9 +178,15 @@ void print_data(char *elf_ptr)
 	printf("\n");
 }
 
+/**
+* print_version - prints the version of the file
+* @elf_ptr: pointer to the elf header
+*
+* Return: Always void
+*/
 void print_version(char *elf_ptr)
 {
-	printf("Version:\t");
+	printf("%-20s", "Version:");
 	if (*elf_ptr == 0x01)
 		printf("1 (current)");
 	else
@@ -170,19 +195,68 @@ void print_version(char *elf_ptr)
 	printf("\n");
 }
 
+/**
+* print_OS - prints the OS
+* @elf_ptr: pointer to the elf header
+*
+* Return: Always void
+*/
 void print_OS(char *elf_ptr)
 {
 	char os_abi[18][29] = {"System V", "HP-UX", "NetBSD", "Linux", "GNU Hurd", "Solaris", "AIX", "IRIX", "FreeBSD", "Tru64", "Novell Modesto", "OpenBSD", "OpenVMS", "NonStop Kernel", "AROS", "Fenix OS", "CloudABI", "Stratus Technologies OpenVOS"};
-	printf("OS/ABI:\t");
+	printf("%-20s", "OS/ABI:");
 
 	printf("UNIX - %s", *(os_abi + *elf_ptr));
 	printf("\n");
 }
 
+/**
+* print_ABI - prints the ABI value
+* @elf_ptr: pointer to the elf header
+*
+* Return: Always void
+*/
 void print_ABI(char *elf_ptr)
 {
-	printf("ABI:\t");
+	printf("%-20s", "ABI:");
 	
 	printf("%d", *elf_ptr);
+	printf("\n");
+}
+
+/**
+* print_type - prints the type of the file
+* @elf_ptr: pointer to the elf header
+*
+* Return: Always void
+*/
+void print_type(char *elf_ptr)
+{
+	char e_types[5][25] = {"NONE (Unknown file)", "REL (Relocatable file)", "EXEC (Executable file)", "DYN (Shared object file)", "CORE (Core file)"};
+
+	printf("%-20s", "Type:");
+	printf("%s", *(e_types + *elf_ptr));
+	printf("\n");
+}
+
+/**
+* print_entry - prints the entry point
+* @elf_ptr: pointer to the elf header
+*
+* Return: Always void
+*/
+void print_entry(char *elf_ptr)
+{
+	int i;
+
+	i = 0;
+
+	printf("%-20s", "Entry point:");
+	printf("0x");
+	while (i < 4)
+	{
+		printf("%x", *(elf_ptr + i));
+		i++;
+	}
 	printf("\n");
 }
