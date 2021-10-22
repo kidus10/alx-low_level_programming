@@ -73,11 +73,11 @@ int main(int argc, char **argv)
 	elf_header = elf_header + 8;
 
 	print_type(elf_header);
-	elf_header = elf_header + 7;
+	elf_header = elf_header + 8;
 
 	print_entry(elf_header);
 
-	free(elf_header - 23);
+	free(elf_header - 24);
 	return (0);
 }
 
@@ -265,9 +265,14 @@ void print_entry(char *elf_ptr)
 
 	printf("  %-35s", "Entry point address:");
 	printf("0x");
-	while (i < 4)
+	while (i < 3)
 	{
-		printf("%x", *(elf_ptr + i));
+		if (*(elf_ptr + i) < 10)
+			printf("0%x", *(elf_ptr + i));
+		else
+		{
+			printf("%x", *(elf_ptr + i));
+		}
 		i++;
 	}
 	printf("\n");
