@@ -204,11 +204,11 @@ void print_version(char *elf_ptr)
 */
 void print_OS(char *elf_ptr)
 {
-	char os_abi[18][29] = {"System V", "HP-UX", "NetBSD", \
-		"Linux", "GNU Hurd", "Solaris", "AIX", "IRIX", \
-		"FreeBSD", "Tru64", "Novell Modesto", "OpenBSD", \
-		"OpenVMS", "NonStop Kernel", "AROS", "Fenix OS", \
-		 "CloudABI", "Stratus Technologies OpenVOS"};
+	char os_abi[18][29] = {"System V", "HP-UX", "NetBSD",
+		"Linux", "GNU Hurd", "Solaris", "AIX", "IRIX",
+		"FreeBSD", "Tru64", "Novell Modesto", "OpenBSD",
+		"OpenVMS", "NonStop Kernel", "AROS", "Fenix OS",
+		"CloudABI", "Stratus Technologies OpenVOS"};
 
 	printf("  %-30s", "OS/ABI:");
 	printf("UNIX - %s", *(os_abi + *elf_ptr));
@@ -236,10 +236,10 @@ void print_ABI(char *elf_ptr)
 */
 void print_type(char *elf_ptr)
 {
-	char e_types[5][25] = {"NONE (Unknown file)", \
-		"REL (Relocatable file)", \
-		"EXEC (Executable file)", \
-		"DYN (Shared object file)", \
+	char e_types[5][25] = {"NONE (Unknown file)",
+		"REL (Relocatable file)",
+		"EXEC (Executable file)",
+		"DYN (Shared object file)",
 		"CORE (Core file)"};
 
 	printf("  %-30s", "Type:");
