@@ -16,7 +16,8 @@ void print_type(char *elf_ptr);
 void print_entry(char *elf_ptr);
 
 /**
-* main - displays the information contained in the ELF header at the start of an ELF file
+* main - displays the information contained in the ELF \
+* header at the start of an ELF file
 * @argc: argument count
 * @argv: argument list
 *
@@ -33,7 +34,7 @@ int main(int argc, char **argv)
 
 	elf_header = malloc(sizeof(char) * 64);
 	f_d = open(argv[1], O_RDONLY);
-	
+
 	if (f_d == -1)
 		exit_prog("can't open the file", 98, argv[1], 1);
 
@@ -81,7 +82,6 @@ int main(int argc, char **argv)
 * @message: message to be printed
 * @e_code: exit code
 * @filename: the filename
-* @f_d: the file desccriptor
 * @flag: flags
 *
 * Return: Always void
@@ -99,7 +99,7 @@ void exit_prog(char *message, int e_code, char *filename, int flag)
 
 /**
 * check_elf - checks if it's elf
-* @ptr_elf - pointer to the elf header buffer
+* @elf_ptr: pointer to the elf header buffer
 *
 * Return: 1 if file is elf, otherwise 0
 */
@@ -203,9 +203,13 @@ void print_version(char *elf_ptr)
 */
 void print_OS(char *elf_ptr)
 {
-	char os_abi[18][29] = {"System V", "HP-UX", "NetBSD", "Linux", "GNU Hurd", "Solaris", "AIX", "IRIX", "FreeBSD", "Tru64", "Novell Modesto", "OpenBSD", "OpenVMS", "NonStop Kernel", "AROS", "Fenix OS", "CloudABI", "Stratus Technologies OpenVOS"};
-	printf("%-20s", "OS/ABI:");
+	char os_abi[18][29] = {"System V", "HP-UX", "NetBSD", \
+		"Linux", "GNU Hurd", "Solaris", "AIX", "IRIX", \
+		"FreeBSD", "Tru64", "Novell Modesto", "OpenBSD", \
+		"OpenVMS", "NonStop Kernel", "AROS", "Fenix OS", \
+		 "CloudABI", "Stratus Technologies OpenVOS"};
 
+	printf("%-20s", "OS/ABI:");
 	printf("UNIX - %s", *(os_abi + *elf_ptr));
 	printf("\n");
 }
@@ -219,7 +223,6 @@ void print_OS(char *elf_ptr)
 void print_ABI(char *elf_ptr)
 {
 	printf("%-20s", "ABI:");
-	
 	printf("%d", *elf_ptr);
 	printf("\n");
 }
@@ -232,7 +235,11 @@ void print_ABI(char *elf_ptr)
 */
 void print_type(char *elf_ptr)
 {
-	char e_types[5][25] = {"NONE (Unknown file)", "REL (Relocatable file)", "EXEC (Executable file)", "DYN (Shared object file)", "CORE (Core file)"};
+	char e_types[5][25] = {"NONE (Unknown file)", \
+		"REL (Relocatable file)", \
+		"EXEC (Executable file)", \
+		"DYN (Shared object file)", \
+		"CORE (Core file)"};
 
 	printf("%-20s", "Type:");
 	printf("%s", *(e_types + *elf_ptr));
