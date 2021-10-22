@@ -19,7 +19,7 @@ void print_bit(char *elf_ptr);
 int main(int argc, char **argv)
 {
 	int f_d, is_elf;
-	char *elf_header, *ptr_to_elf;
+	char *elf_header;
 	ssize_t r_bytes;
 
 	if (argc != 2)
@@ -27,7 +27,6 @@ int main(int argc, char **argv)
 
 	elf_header = malloc(sizeof(char) * 64);
 	f_d = open(argv[1], O_RDONLY);
-	ptr_to_elf = elf_header;
 	
 	if (f_d == -1)
 		exit_prog("can't open the file", 98, argv[1], 1);
@@ -40,14 +39,16 @@ int main(int argc, char **argv)
 	if (r_bytes < 5)
 		exit_prog("is not an ELF file", 98, argv[1], 2);
 
-	is_elf = check_elf(ptr_to_elf);
+	is_elf = check_elf(elf_header);
 
 	if (is_elf == 0)
 		exit_prog("is not an ELF file", 98, argv[1], 2);
 	else
-		print_magic(ptr_to_elf);
+		print_magic(elf_header);
 
-	print_bit(ptr_to_elf);
+	elf_header = elf_header + 4;
+
+	print_bit(elf_header);
 
 	return (0);
 }
@@ -123,9 +124,9 @@ void print_magic(char *elf_ptr)
 void print_bit(char *elf_ptr)
 {
 	printf("Class:\t");
-	if (*elf_ptr == '1')
+	if (*elf_ptr == 0x01)
 		printf("ELF32");
-	else if (*elf_ptr == '2')
+	else if (*elf_ptr == 0x02)
 		printf("ELF64");
 
 	printf("\n");
