@@ -136,7 +136,7 @@ void print_magic(char *elf_ptr)
 	i = 0;
 
 	printf("ELF Header:\n");
-	printf("  %-30s", "Magic:");
+	printf("  %-9s", "Magic:");
 	while (i < 16)
 	{
 		printf("%02x", *(elf_ptr + i));
@@ -157,7 +157,7 @@ void print_magic(char *elf_ptr)
 */
 void print_bit(char *elf_ptr)
 {
-	printf("  %-30s", "Class:");
+	printf("  %-35s", "Class:");
 	if (*elf_ptr == 0x01)
 		printf("ELF32");
 	else if (*elf_ptr == 0x02)
@@ -174,7 +174,7 @@ void print_bit(char *elf_ptr)
 */
 void print_data(char *elf_ptr)
 {
-	printf("  %-30s", "Data:");
+	printf("  %-35s", "Data:");
 	if (*elf_ptr == 0x01)
 		printf("2's complement, little endian");
 	else if (*elf_ptr == 0x02)
@@ -191,7 +191,7 @@ void print_data(char *elf_ptr)
 */
 void print_version(char *elf_ptr)
 {
-	printf("  %-30s", "Version:");
+	printf("  %-35s", "Version:");
 	if (*elf_ptr == 0x01)
 		printf("1 (current)");
 	else
@@ -214,7 +214,7 @@ void print_OS(char *elf_ptr)
 		"OpenVMS", "NonStop Kernel", "AROS", "Fenix OS",
 		"CloudABI", "Stratus Technologies OpenVOS"};
 
-	printf("  %-30s", "OS/ABI:");
+	printf("  %-35s", "OS/ABI:");
 	printf("UNIX - %s", *(os_abi + *elf_ptr));
 	printf("\n");
 }
@@ -227,7 +227,7 @@ void print_OS(char *elf_ptr)
 */
 void print_ABI(char *elf_ptr)
 {
-	printf("  %-30s", "ABI Version:");
+	printf("  %-35s", "ABI Version:");
 	printf("%d", *elf_ptr);
 	printf("\n");
 }
@@ -246,7 +246,7 @@ void print_type(char *elf_ptr)
 		"DYN (Shared object file)",
 		"CORE (Core file)"};
 
-	printf("  %-30s", "Type:");
+	printf("  %-35s", "Type:");
 	printf("%s", *(e_types + *elf_ptr));
 	printf("\n");
 }
@@ -263,7 +263,7 @@ void print_entry(char *elf_ptr)
 
 	i = 0;
 
-	printf("  %-30s", "Entry point address:");
+	printf("  %-35s", "Entry point address:");
 	printf("0x");
 	while (i < 4)
 	{
