@@ -40,6 +40,8 @@ int main(int argc, char **argv)
 
 	r_bytes = read(f_d, elf_header, 64);
 
+	close(f_d);
+
 	if (r_bytes == -1)
 		exit_prog("can't read file", 98, argv[1], 1);
 
@@ -74,6 +76,7 @@ int main(int argc, char **argv)
 	elf_header = elf_header + 7;
 
 	print_entry(elf_header);
+
 	return (0);
 }
 
