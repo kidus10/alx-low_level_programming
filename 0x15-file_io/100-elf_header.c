@@ -98,6 +98,7 @@ void exit_prog(char *message, int e_code, char *filename, int flag)
 		dprintf(STDERR_FILENO, "Error: %s %s\n", message, filename);
 	else if (flag == 2)
 		dprintf(STDERR_FILENO, "Error: %s %s\n", filename, message);
+
 	exit(e_code);
 }
 
@@ -159,11 +160,9 @@ void print_bit(char *elf_ptr)
 {
 	printf("  %-35s", "Class:");
 	if (*elf_ptr == 0x01)
-		printf("ELF32");
+		printf("ELF32\n");
 	else if (*elf_ptr == 0x02)
-		printf("ELF64");
-
-	printf("\n");
+		printf("ELF64\n");
 }
 
 /**
@@ -176,11 +175,9 @@ void print_data(char *elf_ptr)
 {
 	printf("  %-35s", "Data:");
 	if (*elf_ptr == 0x01)
-		printf("2's complement, little endian");
+		printf("2's complement, little endian\n");
 	else if (*elf_ptr == 0x02)
-		printf("2's complement, little endian, big endian");
-
-	printf("\n");
+		printf("2's complement, little endian, big endian\n");
 }
 
 /**
@@ -193,11 +190,9 @@ void print_version(char *elf_ptr)
 {
 	printf("  %-35s", "Version:");
 	if (*elf_ptr == 0x01)
-		printf("1 (current)");
+		printf("1 (current)\n");
 	else
-		printf("0x%2x", *elf_ptr);
-
-	printf("\n");
+		printf("0x%2x\n", *elf_ptr);
 }
 
 /**
@@ -215,8 +210,7 @@ void print_OS(char *elf_ptr)
 		"CloudABI", "Stratus Technologies OpenVOS"};
 
 	printf("  %-35s", "OS/ABI:");
-	printf("UNIX - %s", *(os_abi + *elf_ptr));
-	printf("\n");
+	printf("UNIX - %s\n", *(os_abi + *elf_ptr));
 }
 
 /**
@@ -228,8 +222,7 @@ void print_OS(char *elf_ptr)
 void print_ABI(char *elf_ptr)
 {
 	printf("  %-35s", "ABI Version:");
-	printf("%d", *elf_ptr);
-	printf("\n");
+	printf("%d\n", *elf_ptr);
 }
 
 /**
@@ -247,8 +240,7 @@ void print_type(char *elf_ptr)
 		"CORE (Core file)"};
 
 	printf("  %-35s", "Type:");
-	printf("%s", *(e_types + *elf_ptr));
-	printf("\n");
+	printf("%s\n", *(e_types + *elf_ptr));
 }
 
 /**
@@ -270,9 +262,7 @@ void print_entry(char *elf_ptr)
 		if (*(elf_ptr + i) < 10)
 			printf("0%x", *(elf_ptr + i));
 		else
-		{
 			printf("%x", *(elf_ptr + i));
-		}
 		i++;
 	}
 	printf("\n");
