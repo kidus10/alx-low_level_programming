@@ -8,6 +8,7 @@ void exit_prog(char *message, int e_code, char *filename, int flag);
 int check_elf(char *elf_ptr);
 void print_magic(char *elf_ptr);
 void print_bit(char *elf_ptr);
+void print_data(char *elf_ptr);
 
 /**
 * main - displays the information contained in the ELF header at the start of an ELF file
@@ -49,6 +50,10 @@ int main(int argc, char **argv)
 	elf_header = elf_header + 4;
 
 	print_bit(elf_header);
+	elf_header = elf_header + 1;
+
+	print_data(elf_header);
+	elf_header = elf_header + 1;
 
 	return (0);
 }
@@ -128,6 +133,17 @@ void print_bit(char *elf_ptr)
 		printf("ELF32");
 	else if (*elf_ptr == 0x02)
 		printf("ELF64");
+
+	printf("\n");
+}
+
+void print_data(char *elf_ptr)
+{
+	printf("Data:\t");
+	if (*elf_ptr == 0x01)
+		printf("2's complement, little endian");
+	else if (*elf_ptr == 0x02)
+		printf("2's complement, little endian, big endian");
 
 	printf("\n");
 }
