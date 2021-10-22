@@ -177,7 +177,7 @@ void print_data(char *elf_ptr)
 	if (*elf_ptr == 0x01)
 		printf("2's complement, little endian\n");
 	else if (*elf_ptr == 0x02)
-		printf("2's complement, little endian, big endian\n");
+		printf("2's complement, big endian\n");
 }
 
 /**
