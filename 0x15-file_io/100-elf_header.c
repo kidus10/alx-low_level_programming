@@ -9,6 +9,9 @@ int check_elf(char *elf_ptr);
 void print_magic(char *elf_ptr);
 void print_bit(char *elf_ptr);
 void print_data(char *elf_ptr);
+void print_version(char *elf_ptr);
+void print_OS(char *elf_ptr);
+void print_ABI(char *elf_ptr);
 
 /**
 * main - displays the information contained in the ELF header at the start of an ELF file
@@ -55,6 +58,14 @@ int main(int argc, char **argv)
 	print_data(elf_header);
 	elf_header = elf_header + 1;
 
+	print_version(elf_header);
+	elf_header = elf_header + 1;
+
+	print_OS(elf_header);
+	elf_header = elf_header + 1;
+
+	print_ABI(elf_header);
+	elf_header = elf_header + 1;
 	return (0);
 }
 
@@ -145,5 +156,33 @@ void print_data(char *elf_ptr)
 	else if (*elf_ptr == 0x02)
 		printf("2's complement, little endian, big endian");
 
+	printf("\n");
+}
+
+void print_version(char *elf_ptr)
+{
+	printf("Version:\t");
+	if (*elf_ptr == 0x01)
+		printf("1 (current)");
+	else
+		printf("0x%2x", *elf_ptr);
+
+	printf("\n");
+}
+
+void print_OS(char *elf_ptr)
+{
+	char os_abi[18][29] = {"System V", "HP-UX", "NetBSD", "Linux", "GNU Hurd", "Solaris", "AIX", "IRIX", "FreeBSD", "Tru64", "Novell Modesto", "OpenBSD", "OpenVMS", "NonStop Kernel", "AROS", "Fenix OS", "CloudABI", "Stratus Technologies OpenVOS"};
+	printf("OS/ABI:\t");
+
+	printf("UNIX - %s", *(os_abi + *elf_ptr));
+	printf("\n");
+}
+
+void print_ABI(char *elf_ptr)
+{
+	printf("ABI:\t");
+	
+	printf("%d", *elf_ptr);
 	printf("\n");
 }
