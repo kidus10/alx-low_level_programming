@@ -54,5 +54,5 @@ int advanced_binary(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	return (recurse_advanced_helper(array, 0, size - 1, value, &match));
+	return (recurse_advanced_binary(array, 0, size - 1, value, &match));
 }
