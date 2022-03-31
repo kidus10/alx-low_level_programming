@@ -49,7 +49,7 @@ listint_t *jump_list_recurse(listint_t *curr, size_t size,
 {
 	listint_t *next_step = NULL;
 
-	next_step = look_ahead(curr, step);
+	next_step = check_next(curr, step);
 	printf("Value checked at index [%lu] = [%d]\n",
 next_step->index, next_step->n);
 	if (curr->index + step < size && (next_step->n < val))
